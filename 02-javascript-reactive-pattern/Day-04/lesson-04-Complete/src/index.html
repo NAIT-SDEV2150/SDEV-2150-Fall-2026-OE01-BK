@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/main.js"></script>
+  <title>2150 - Lesson 02 Demo</title>
+  <!-- include Bootstrap link here for proper CSS var shadow DOM piercing -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <main class="container py-4">
+    <resource-header></resource-header>
+    <section class="row g-3">
+      <!-- Filters / Search -->
+      <resource-filters class="col-12 col-lg-4"></resource-filters>
+      <!-- Results list -->
+      <resource-results class="col-12 col-lg-4"></resource-results>
+      <!-- Details panel -->
+      <resource-details class="col-12 col-lg-4"></resource-details>
+  </main>
+</body>
+
+</html>
