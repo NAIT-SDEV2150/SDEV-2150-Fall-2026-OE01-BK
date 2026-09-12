@@ -78,8 +78,9 @@ class ResourceResults extends HTMLElement {
     // identify which button is clicked
 
     const button = event.target.closest('button[data-id]');
-    if (button){
-      const seletedId = button.getAttribute('data-id');
+    if (button) 
+      {
+      const selectedId = button.getAttribute('data-id');
       // mark this result element as active
       // optional chaining operator 
 
@@ -88,7 +89,7 @@ class ResourceResults extends HTMLElement {
 
       // Find the selected resurce from results
 
-      const resource = this.#results.find(r => r.id === seletedId);
+      const resource = this.#results.find(r => r.id === selectedId);
       // create an event and pass selected resource as payload
 
       const selectedEvent = new CustomEvent('resource-selected', {
@@ -123,7 +124,16 @@ class ResourceResults extends HTMLElement {
  const content = template.content.cloneNode(true);
  if (this.#results.length) {
       // Generate the list of results to display
-      const resultsHtml = this.#results.map(result =>` <button type="button" class="list-group-item list-group-item-action">
+      // const resultsHtml = this.#results.map(result =>` <button type="button" class="list-group-item list-group-item-action">
+      //     <div class="d-flex w-100 justify-content-between">
+      //       <h2 class="h6 mb-1">${result.title}</h2>
+      //       <small>${result.category}</small>
+      //     </div>
+      //     <p class="mb-1 small text-body-secondary">${result.summary}</p>
+      //     <small class="text-body-secondary">${result.location}</small>
+      //   </button>`);
+
+        const resultsHtml = this.#results.map(result => `<button type="button" class="list-group-item list-group-item-action" data-id="${result.id}">
           <div class="d-flex w-100 justify-content-between">
             <h2 class="h6 mb-1">${result.title}</h2>
             <small>${result.category}</small>

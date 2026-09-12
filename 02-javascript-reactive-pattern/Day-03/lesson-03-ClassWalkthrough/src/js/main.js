@@ -50,6 +50,17 @@ const resultData = [
     virtual: false,
     openNow: true,
   },
+    {
+    id: 'Mental Health',
+    title: 'Mental Health Service Desk',
+    category: 'Tech',
+    summary: 'Account access, Wi-Fi, MFA resets.',
+    location: 'Library',
+    hours: 'Mon-Fri 08:30-16:30',
+    contact: 'it@nait.ca',
+    virtual: false,
+    openNow: true,
+  },
 ];
 
 // TODO: Pass data to resource-results component
@@ -60,3 +71,13 @@ resultsComponent.results= resultData;
 
 // TODO: Listen for resourceSelected event and update resource-details component
 const detailsComponent = document.querySelector('resource-details');
+
+resultsComponent.addEventListener('resource-selected', (event) => {
+
+const {resource} = event.detail;
+detailsComponent.resource = resource;
+
+
+});
+
+
