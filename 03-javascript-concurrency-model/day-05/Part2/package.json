@@ -1,0 +1,18 @@
+{
+  "name": "lesson-05",
+  "description": "Lesson 05 demo and exercise",
+  "type": "module",
+  "scripts": {
+    "build": "vite build src --outDir ../dist",
+    "dev": "vite src",
+    "eslint": "eslint --stats js/*.js ",
+    "start": "vite serve src"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0",
+    "vite": "^6.2.2"
+  }
+}
