@@ -6,6 +6,7 @@ export const resources = [
     summary: 'Drop-in tutoring and study support.',
     location: 'Building W, Room W101',
     openNow: true,
+    virtual: true,
   },
   {
     id: 'counselling',
@@ -14,6 +15,7 @@ export const resources = [
     summary: 'Confidential mental health supports.',
     location: 'Virtual and in-person',
     openNow: true,
+    virtual: false,
   },
   {
     id: 'bursaries',
@@ -22,6 +24,7 @@ export const resources = [
     summary: 'Funding options and application help.',
     location: 'Student Services, Main Floor CAT',
     openNow: false,
+    virtual: true,
   },
   {
     id: 'it',
@@ -30,5 +33,7 @@ export const resources = [
     summary: 'Account access, Wi-Fi, BYOD support.',
     location: 'Library',
     openNow: true,
+    virtual: false,
   },
+  
 ];
