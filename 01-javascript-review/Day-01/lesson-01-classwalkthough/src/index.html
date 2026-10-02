@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/main.js"></script>
+  <title>SDEV2150 - Lesson 01 Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <main class="container py-4">
+    <header class="mb-4">
+      <h1>SDEV2150 Lesson 01: JavaScript Review</h1>
+    </header>
+
+    <section class="mb-3 d-flex gap-2 flex-wrap">
+      <button id="btn-run" class="btn btn-primary" type="button">Run demo</button>
+      <button id="btn-clear" class="btn btn-outline-secondary" type="button">Clear</button>
+    </section>
+
+    <section class="row g-3 mb-3">
+      <div class="col-12 col-lg-6">
+        <h2>Demo Output</h2>
+        <div id="output" class="border rounded p-3" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="row g-3 mb-3">
+      <div class="col-12 col-lg-6">
+        <h2>Demo Todo List</h2>
+        <div class="input-group">
+          <input id="txt-task" class="form-control" type="text" placeholder="Enter a task title" autocomplete="off" />
+          <button id="btn-add" class="btn btn-success" type="button">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-3">
+      <div class="col-12 col-lg-6">
+        <h3 class="h5">Todo List</h3>
+        <div id="todo-list" class="border rounded p-3"></div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

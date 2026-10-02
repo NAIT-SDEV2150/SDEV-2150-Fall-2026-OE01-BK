@@ -53,92 +53,23 @@ class ResourceFilters extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     // TODO: Bind event handler methods
-    this._handleSubmit = this._handleSubmit.bind(this);
-    this._handleCategoryClick = this._handleCategoryClick.bind(this);
   }
 
   // TODO: Manage lifecycle and events (i.e., connectedCallback, disconnectedCallback).
   connectedCallback() {
     this.render();
     // Step 2: On form submit, preventDefault, read values, and dispatch `resource-filters-changed`.
-    
     // TODO: Add a submit listener to #frm-filter.
-    this._formE1 = this.shadowRoot.querySelector('#frm-filter');
-    this._formE1.addEventListener('submit',this._handleSubmit);
-
+    
     // TODO: Add click listener to category buttons.
-    this._categoryGroupE1 = this.shadowRoot.querySelector('[aria-label="Category filters"]');
-    this._categoryGroupE1.addEventListener('click', this._handleCategoryClick);
-
-  }
-
-  // disconnectedCallback
-
-  disconnectedCallback(){
-    if (this._formE1){
-      this._formE1.removeEventListner('submit',this._handleSubmit);
-    }
-    if (this._categoryGroupE1){
-      this._categoryGroupE1.removeEventListner('click', this._handleCategoryClick);
-    }
-
   }
   
   // Step 2: Create submit handler method.
-  _handleSubmit(event){
-
-    event.preventDefault();
-
- // TODO: Build a filters object: { query, category, openNow, virtual }.
-
- const query = this.shadowRoot.querySelector('#q').value.trim(); // read user input
- const categoryGroup = this.shadowRoot.querySelector('[aria-label="Category filters"]');
- const categoryButton = categoryGroup.querySelector('.active') || categoryGroup.querySelector('button');
- const category = categoryButton ? categoryButton.textContent.trim().toLowerCase() : 'all' ;
- const openNow = this.shadowRoot.querySelector('#openNow').checked;
- const virtual = this.shadowRoot.querySelector('#virtual').checked;
-
-// plian object that captures component state
- const filters = {
-query,
-category,
-openNow,
-virtual,
- };
-
- 
+  // TODO: Build a filters object: { query, category, openNow, virtual }.
   // TODO: Dispatch a bubbling + composed CustomEvent('resource-filters-changed', { detail: filters }).
 
-const filtersEvent = new CustomEvent('resource-filters-changed', {
-  detail: filters,
-  bubbles: true,
-  composed: true,
-});
-
-this,this.dispatchEvent(filtersEvent);
-
-
-
-  }
- 
-
   // Step 2: Create category button click handler method.
-  _handleCategoryClick(event){
-    const button = event.target.closest('button');
-    if (!button || !this._categoryGroupEl.contains(button)) {
-      return;
-    }
-
-    const activeButton = this._categoryGroupEl.querySelector('.active');// search inside container for first active element
-    if (activeButton && activeButton !== button) {
-      activeButton.classList.remove('active');
-    }
-    button.classList.add('active');
-
-  }
   // TODO: Handle category button clicks to set active state.
-
-  
 
   render() {
     this.shadowRoot.appendChild(template.content.cloneNode(true));

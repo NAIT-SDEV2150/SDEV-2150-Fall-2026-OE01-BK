@@ -1,0 +1,14 @@
+import { useState } from "react";
+
+
+export default function useToggle(initial = false)
+{
+    const [value, setValue] = useState(initial)
+
+    function toggle()
+    {
+        setValue(prev => !prev);
+    }
+
+    return [value, toggle];
+}
